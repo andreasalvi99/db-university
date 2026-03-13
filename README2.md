@@ -31,3 +31,13 @@ GROUP BY exams.date
 ```
 
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+
+```sql
+SELECT
+ departments.name,
+ COUNT(degrees.name)
+FROM university.departments
+JOIN university.degrees
+ON departments.id = degrees.department_id
+GROUP BY departments.name
+```
