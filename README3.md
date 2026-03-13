@@ -52,6 +52,21 @@ ON departments.id = degrees.department_id
 ```
 
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+
+```sql
+SELECT
+degrees.name,
+courses.name,
+teachers.name
+FROM university.degrees
+JOIN university.courses
+ON degrees.id = courses.degree_id
+JOIN course_teacher
+ON courses.id = course_teacher.course_id
+JOIN university.teachers
+ON course_teacher.teacher_id = teachers.id
+```
+
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di
    Matematica (54)
 7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti
